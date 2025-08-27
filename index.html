@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <title>Excel Clone</title>
+</head>
+<body>
+    <div class="toolbar">
+        <div class="font">
+            <select class="font-select">
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+
+            </select>
+            <select class="size-select">
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <span class="separator"></span>
+        <div class="bui">
+            <i class='bx bx-bold' ></i>
+            <i class='bx bx-italic' ></i>
+            <i class='bx bx-underline'></i>
+        </div>
+        <span class="separator"></span>
+        <div class="alignment">
+            <i class='bx bx-align-left left' ></i>
+            <i class='bx bx-align-middle center' ></i>
+            <i class='bx bx-align-right right' ></i>
+        </div>
+        <span class="separator"></span>
+        <div class="colors">
+            <i class='bx bx-font-color' title="Text Color"></i>
+            <i class='bx bx-paint' title="Background Color"></i>
+            <input type="color" class="text-color" style="display: none">
+            <input type="color" class="background-color" style="display:none">
+        </div>
+        
+    </div>
+
+    <div class="formula-bar">
+        <input type="text" class="address-input" disabled>
+        <span class="separator1"></span>
+        <img class="tool-img" src="form.png" alt=""><input type="text" class="formula-input" placeholder="Formula">
+    </div>
+
+    <div class="grid-container">
+        <div class="top_left_cell">
+        </div>
+        <div class="top_row">
+            
+        </div>
+        <div class="left_col">
+
+        </div>
+        <div class="grid">
+
+        </div>
+    </div>
+
+    <div class="sheets">
+        <button class="add-sheet">+</button>
+        <!-- <div class="sheet active-sheet" sheetInd="0">Sheet 1</div> -->
+         <div class="sheets-list">
+            <div class="sheet active-sheet" sheetIdx="0"> Sheet 1</div>
+        </div>
+    </div>
+    <script src="init.js"></script>
+    <script src="tool.js"></script>
+    <script src="formula.js"></script>
+</body>
+</html>
