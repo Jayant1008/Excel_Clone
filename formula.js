@@ -27,7 +27,7 @@ formulaInput.addEventListener("keydown", function (e) {
         let value = evaluateFormula(cFormula);
         updateUI(value, rid, cid);
         cellObj.formula = cFormula;
-        setFormula(addressOfTheCell, cFormula);
+        setFormula(address, cFormula);
     }
 })
 function evaluateFormula(formula) {
@@ -69,6 +69,7 @@ function removeFormula(address, formula) {
 }
 
 function updateUI(value, rid, cid) {
+    console.log(value, rid, cid);
     let tobeChangedCell = document.querySelector(`.grid .cell[rId='${rid}'][cId='${cid}']`);
     tobeChangedCell.textContent = value;
     db[rid][cid].value = value;
