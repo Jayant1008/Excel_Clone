@@ -1,7 +1,7 @@
 # Excel Clone  
 
 A simple spreadsheet application built using HTML, CSS, and JavaScript.  
-It supports editing cells, writing formulas (like `=A1 + B2`), and automatically updating dependent cells (including transitive dependencies).  
+It supports editing cells, writing formulas (like `=A1 + B2`), applying styles (bold, italic, underline, alignment, colors), and automatically updating dependent cells (including transitive dependencies).  
 
 ---
 
@@ -18,6 +18,15 @@ It supports editing cells, writing formulas (like `=A1 + B2`), and automatically
   - `=( A1 + B1 ) * 3`  
 - References other cells using their Excel-style address (`A1`, `B2`, etc.).  
 - Uses `eval()` to calculate arithmetic expressions once references are replaced with values.  
+
+### Styling  
+- Each cell supports text formatting and styles:  
+  - Font family (for example: Arial)  
+  - Font size  
+  - Bold, italic, underline  
+  - Horizontal alignment (left, center, right)  
+  - Text color  
+  - Background color  
 
 ### Dependency Tracking  
 - Each cell keeps track of its children (cells depending on it).  
@@ -39,10 +48,17 @@ It supports editing cells, writing formulas (like `=A1 + B2`), and automatically
 
 - **Frontend:** HTML, CSS  
 - **Logic:** JavaScript (Vanilla, no frameworks)  
-- **Data Model:** 2D array `db` where each cell stores:  
-  - `value` → final evaluated result  
-  - `formula` → formula string (if any)  
-  - `children` → list of dependent cells  
+- **Data Model:**  
+  Each cell stores the following information:  
+  - Text color  
+  - Background color  
+  - Font family  
+  - Font size  
+  - Horizontal alignment  
+  - Bold, italic, underline states  
+  - Value of the cell  
+  - Formula (if any)  
+  - List of dependent children cells  
 
 ---
 
@@ -50,12 +66,12 @@ It supports editing cells, writing formulas (like `=A1 + B2`), and automatically
 
 ### Cell Input (Blur Event)  
 - When a user types in a cell and leaves it:  
-  - If value is same → nothing changes.  
-  - If formula existed → it’s removed.  
-- Cell value is updated, and all children update recursively.  
+  - If the value is the same → nothing changes.  
+  - If a formula existed → it is removed.  
+- The cell’s value is updated, and all dependent children update recursively.  
 
 ### Formula Input (Enter Key)  
-- User enters formula in formula bar → presses Enter.  
+- User enters a formula in the formula bar and presses Enter.  
 - Formula is parsed:  
   - Cell references (`A1`, `B2`, …) are replaced with values.  
   - Expression is evaluated using `eval`.  
@@ -63,7 +79,7 @@ It supports editing cells, writing formulas (like `=A1 + B2`), and automatically
 - Value is updated and propagated.  
 
 ### Update Propagation  
-- `updateUI()` updates the current cell’s value in UI and db.  
+- `updateUI()` updates the current cell’s value in both the UI and the database.  
 - Recursively updates all child cells that depend on it.  
 
 ---
