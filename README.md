@@ -15,11 +15,11 @@ Formulas:
 
 - Supports formulas like:
 
-=A1 + B1
+  =A1 + B1
 
-=A1 * 2
+  =A1 * 2
 
-=( A1 + B1 ) * 3
+  =( A1 + B1 ) * 3
 
 - References other cells using their Excel-style address (A1, B2, etc.).
 
@@ -35,13 +35,13 @@ Dependency Tracking:
 
 - All dependent cells are recalculated recursively (supports transitive updates).
 
-Example:
+  Example:
 
-B1 = A1 + 5
+  B1 = A1 + 5
 
-C1 = B1 * 2
+  C1 = B1 * 2
 
-Updating A1 → updates B1 → updates C1.
+  Updating A1 → updates B1 → updates C1.
 
 Formula Removal:
 
@@ -109,7 +109,7 @@ How to Run:
 
 Clone/download this repo:
 
-git clone https://github.com/<your-username>/Excel_Clone.git
+git clone https://github.com/username/Excel_Clone.git
 
 
 Open index.html in any browser.
