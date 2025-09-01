@@ -13,9 +13,9 @@ It supports editing cells, writing formulas (like `=A1 + B2`), applying styles (
 
 ### Formulas  
 - Supports formulas like:  
-  - `=A1 + B1`  
-  - `=A1 * 2`  
-  - `=( A1 + B1 ) * 3`  
+  - `A1 + B1`  
+  - `A1 * 2`  
+  - `( A1 + B1 ) * 3`  
 - References other cells using their Excel-style address (`A1`, `B2`, etc.).  
 - Uses `eval()` to calculate arithmetic expressions once references are replaced with values.  
 
